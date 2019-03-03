@@ -1,0 +1,80 @@
+<?php $view->extend('layout/layout.phtml') ?>
+
+<form autocomplete="off" method="post" enctype="multipart/form-data" class="mt-4">
+    <input autocomplete="false" name="hidden" type="text" style="display:none;">
+    <div class="form-group">
+        <div class="input-group mb-3 input-group-lg">
+            <div class="input-group-prepend">
+                <span class="input-group-text"><i class="flag flag-lt"></i></span>
+            </div>
+            <input type="text" class="form-control" id="original" name="original">
+            <div class="input-group-append">
+                <button type="button" class="input-group-text" onclick="recognizer(this, 'lt-LT', 'original')">
+                    <i class="fas fa-microphone"></i>
+                </button>
+            </div>
+        </div>
+
+        <div class="keyboard" id="keyboard" style="display: none;">
+            <input type="button" class="btn btn-outline-dark mb-1" value="Ą">
+            <input type="button" class="btn btn-outline-dark mb-1" value="ą">
+            <input type="button" class="btn btn-outline-dark mb-1" value="Č">
+            <input type="button" class="btn btn-outline-dark mb-1" value="č">
+            <input type="button" class="btn btn-outline-dark mb-1" value="Ę">
+            <input type="button" class="btn btn-outline-dark mb-1" value="ę">
+            <input type="button" class="btn btn-outline-dark mb-1" value="Ė">
+            <input type="button" class="btn btn-outline-dark mb-1" value="ė">
+            <input type="button" class="btn btn-outline-dark mb-1" value="Š">
+            <input type="button" class="btn btn-outline-dark mb-1" value="š">
+            <input type="button" class="btn btn-outline-dark mb-1" value="Ų">
+            <input type="button" class="btn btn-outline-dark mb-1" value="ų">
+            <input type="button" class="btn btn-outline-dark mb-1" value="Ū">
+            <input type="button" class="btn btn-outline-dark mb-1" value="ū">
+            <input type="button" class="btn btn-outline-dark mb-1" value="Ž">
+            <input type="button" class="btn btn-outline-dark mb-1" value="ž">
+        </div>
+    </div>
+
+    <div class="form-group">
+        <div class="input-group mb-3 input-group-lg">
+            <div class="input-group-prepend">
+                <span class="input-group-text"><i class="flag flag-ru"></i></span>
+            </div>
+            <input type="text" class="form-control" id="translation" name="translation">
+            <div class="input-group-append">
+                <button type="button" class="input-group-text" onclick="recognizer(this, 'ru-RU', 'translation')">
+                    <i class="fas fa-microphone"></i>
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <div class="form-group">
+        <input type="text" class="form-control form-control-lg text-lowercase" id="transcription" name="transcription" placeholder="Транскрипция">
+    </div>
+
+    <div class="mb-3">
+        <button type="button" class="btn btn-block btn-lg btn-outline-success" onclick="retrieveImages()">
+            <i class="far fa-images"></i> Фото
+        </button>
+    </div>
+
+    <div id="spinner" class="col text-center text-info mb-3" style="display: none;">
+        <div class="fa-3x">
+            <i class="fas fa-cog fa-spin"></i>
+        </div>
+    </div>
+    <div class="row radio-images" id="images"></div>
+
+    <button id="save" type="button" class="btn btn-block btn-lg btn-info">
+        <i class="far fa-save"></i> Сохранить
+    </button>
+
+    <div id="spinner-save" class="col text-center text-info mb-3" style="display: none;">
+        <div class="fa-3x">
+            <i class="fas fa-cog fa-spin"></i>
+        </div>
+    </div>
+</form>
+
+<script src="/static/js/admin.js"></script>

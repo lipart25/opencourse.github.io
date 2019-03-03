@@ -1,0 +1,26 @@
+<?php $view->extend('layout/layout.phtml') ?>
+
+<h3 class="text-center mt-3" id="title">Редактирование слов</h3>
+
+<table class="table mt-3">
+    <tbody>
+        <?php foreach ($words as $word) : ?>
+            <tr id="row-<?= $word->id ?>">
+                <td class="align-middle font-weight-bold"><?= $word->original ?></td>
+                <td class="align-middle text-right">
+                    <button class="btn btn-lg btn-danger" onclick="removeWord(<?= $word->id ?>)">
+                        <i class="far fa-trash-alt"></i>
+                    </button>
+                </td>
+            </tr>
+        <?php endforeach; ?>
+    </tbody>
+</table>
+
+<div class="mt-3">
+    <a href="/admin/add" class="btn btn-block btn-lg btn-info">
+        <i class="fas fa-plus-circle"></i> Добавить
+    </a>
+</div>
+
+<script src="/static/js/admin-list.js"></script>

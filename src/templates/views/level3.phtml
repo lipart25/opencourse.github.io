@@ -1,0 +1,28 @@
+<?php $view->extend('layout/layout.phtml') ?>
+
+<h3 id="title" class="text-center mt-3">Переведи слова</h3>
+<div class="owl-carousel" id="carouselLevel3">
+    <?php foreach ($words as $word) : ?>
+        <div class="owl-card" data-id="<?= $word->id ?>">
+            <div class="card mt-3 <?= (!empty($word->audio_translation) ? 'play' : '') ?>" <?= (!empty($word->audio_translation) ? 'data-audio="' . $word->audio_translation . '"' : '') ?>>
+                <?php if (!empty($word->image)) : ?>
+                    <div class="text-center">
+                        <img src="data/img/<?= $word->image ?>" class="card-img-top p-1">
+                    </div>
+                <?php endif; ?>
+                <div class="card-body text-center">
+                    <h4 class="card-title mt-1 mb-1"><?= $word->translation ?></h4>
+                </div>
+            </div>
+
+            <?php foreach ($wordsOptions as $wordOption) : ?>
+                <div class="card mt-3 option <?= (!empty($wordOption->audio_original) ? 'play' : '') ?>" data-id="<?= $wordOption->id ?>" <?= (!empty($wordOption->audio_original) ? 'data-audio="' . $wordOption->audio_original . '"' : '') ?>>
+                    <div class="card-body text-center">
+                        <h4 class="card-title mt-1 mb-0"><?= $wordOption->original ?></h4>
+                    </div>
+                </div>
+            <?php endforeach; ?>
+        </div>
+    <?php endforeach; ?>
+</div>
+<div id="result" class="text-center"></div>

@@ -1,0 +1,39 @@
+<?php $view->extend('layout/layout.phtml') ?>
+
+<h3 class="text-center mt-3" id="title">Изучи новые слова</h3>
+<div class="owl-carousel" id="carouselLevel1">
+    <?php foreach ($words as $word) : ?>
+        <div class="owl-card">
+            <div class="card mt-3">
+                <?php if (!empty($word->image)) : ?>
+                    <div class="text-center">
+                        <img src="data/img/<?= $word->image ?>" class="card-img-top p-1">
+                    </div>
+                <?php endif; ?>
+                <div class="card-body">
+                    <?php if (!empty($word->audio_original)) : ?>
+                        <button data-audio="<?= $word->audio_original ?>" type="button" class="btn btn-info btn-lg float-right mt-2 play">
+                            <i class="fas fa-play-circle"></i>
+                        </button>
+                    <?php endif; ?>
+                    <h4 class="card-title mt-1 mb-1"><?= $word->original ?></h4>
+                    <?php if (!empty($word->transcription)) : ?>
+                        <p class="card-subtitle mb-2 text-muted font-italic"><?= $word->transcription ?></p>
+                    <?php endif; ?>
+                </div>
+            </div>
+
+            <div class="card mt-3">
+                <div class="card-body">
+                    <?php if (!empty($word->audio_translation)) : ?>
+                        <button data-audio="<?= $word->audio_translation ?>" type="button" class="btn btn-info btn-lg float-right mt-2 play">
+                            <i class="fas fa-play-circle"></i>
+                        </button>
+                    <?php endif; ?>
+                    <h4 class="card-title mt-1 mb-0"><?= $word->translation ?></h4>
+                </div>
+            </div>
+        </div>
+    <?php endforeach; ?>
+</div>
+<div id="result" class="text-center"></div>

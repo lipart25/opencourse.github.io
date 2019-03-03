@@ -1,0 +1,31 @@
+<?php $view->extend('layout/layout.phtml') ?>
+
+<h3 id="title" class="text-center mt-3">Найди пару</h3>
+<div class="row" id="pairs">
+
+    <div class="col-6 text-center" id="cardsLeft">
+        <?php foreach ($wordsLt as $wordLt) : ?>
+            <div class="card mt-2 <?= (!empty($wordLt->audio_original) ? 'play' : '') ?>"  data-id="<?= $wordLt->id ?>" <?= (!empty($wordLt->audio_original) ? 'data-audio="' . $wordLt->audio_original . '"' : '') ?>>
+                <div class="card-body p-2">
+                    <h5 class="card-title m-0"><?= $wordLt->original ?></h5>
+                    <?php if (!empty($wordLt->transcription)) : ?>
+                        <p class="card-subtitle mb-0 text-muted font-italic">
+                            <?= $wordLt->transcription; ?>
+                        </p>
+                    <?php endif; ?>
+                </div>
+            </div>
+        <?php endforeach; ?>
+    </div>
+
+    <div class="col-6 text-center" id="cardsRight">
+        <?php foreach ($wordsRu as $wordRu) : ?>
+            <div class="card mt-2 <?= (!empty($wordRu->audio_translation) ? 'play' : '') ?>"  data-id="<?= $wordRu->id ?>" <?= (!empty($wordRu->audio_translation) ? 'data-audio="' . $wordRu->audio_translation . '"' : '') ?>>
+                <div class="card-body p-3">
+                    <h5 class="card-title m-0"><?= $wordRu->translation ?></h5>
+                </div>
+            </div>
+        <?php endforeach; ?>
+    </div>
+</div>
+<div id="result" class="text-center"></div>

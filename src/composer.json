@@ -1,0 +1,19 @@
+{
+    "autoload": {
+        "psr-4": {
+            "": "src/"
+        }
+    },
+    "minimum-stability": "dev",
+    "require": {
+        "slim/slim": "^3.12",
+        "slim/php-view": "^2.2",
+        "illuminate/database": "^5.4",
+        "symfony/filesystem": "^3.3",
+        "symfony/templating": "^3.3",
+        "symfony/var-dumper": "^3.3",
+        "stichoza/google-translate-php": "^4.0",
+        "buchin/google-image-grabber": "dev-master",
+        "gumlet/php-image-resize": "1.9.*"
+    }
+}

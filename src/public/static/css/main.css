@@ -1,0 +1,45 @@
+.flag {
+    margin-right: 5px;
+    width: 26px;
+    height: 16px;
+    display: inline-block;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+}
+
+.flag-lt {
+    background-image: url("../img/lt.png");
+}
+
+.flag-ru {
+    background-image: url("../img/ru.png");
+}
+
+.owl-card img {
+    max-width: 180px;
+    height: auto;
+    display: inline-block!important;
+}
+
+#carouselLevel3 .owl-card img {
+    max-width: 180px;
+}
+
+/* HIDE RADIO */
+.radio-images [type=radio] {
+    position: absolute;
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+/* IMAGE STYLES */
+.radio-images [type=radio] + img {
+    cursor: pointer;
+}
+
+/* CHECKED STYLES */
+.radio-images [type=radio]:checked + img {
+    outline: 5px solid #00ab34;
+}

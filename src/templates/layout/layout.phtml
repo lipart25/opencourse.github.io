@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="manifest" href="/manifest.webmanifest">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="/vendor/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+    <link rel="stylesheet" href="/vendor/owl-carousel/assets/owl.carousel.min.css">
+    <link rel="stylesheet" href="/vendor/owl-carousel/assets/owl.theme.default.min.css">
+    <!-- Static CSS -->
+    <link rel="stylesheet" href="/static/css/main.css">
+    <title>Lietuvių kalba</title>
+</head>
+<body>
+
+<div class="container-full">
+    <!-- Just an image -->
+    <nav class="navbar navbar-dark bg-info">
+        <a class="navbar-brand" href="/">
+            <i class="fab fa-leanpub"></i> Lietuvių kalba
+        </a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNavDropdown">
+            <ul class="navbar-nav">
+                <li class="nav-item active">
+                    <a class="nav-link" href="/">Начало</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/login">Для мамы</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+</div>
+
+<div class="container">
+    <?php $view['slots']->output('_content') ?>
+</div>
+
+<!-- Optional JavaScript -->
+<!-- jQuery first, then Popper.js, then Bootstrap JS -->
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+<script src="/vendor/bootstrap/js/bootstrap.min.js"></script>
+<script src="/vendor/owl-carousel/owl.carousel.min.js"></script>
+<!-- Logic JS -->
+<script src="/static/js/main.js"></script>
+<script src="/static/js/carousel.js"></script>
+
+<?php if (!empty($jsFunction)) : ?>
+    <script>
+        setTimeout(function(){
+            <?= $jsFunction; ?>
+        },700);
+    </script>
+<?php endif; ?>
+
+</body>
+</html>
